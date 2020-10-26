@@ -12,7 +12,11 @@ const config = {
     filename: "bundle.js",
     publicPath: "/dist/"
   },
-  resolve: { modules: [ 'node_modules' ] },
+  resolve: {
+    modules: [ 'node_modules' ],
+    extensions: [ '.js', '.jsx' ],
+    mainFiles: [ 'index' ]
+  },
   module: {
     rules: [
       {
@@ -41,7 +45,8 @@ const config = {
     hot: true,
     historyApiFallback: {
       index:  '/dist/index.html',
-    }
+    },
+    open: true,
   }
 }
 
